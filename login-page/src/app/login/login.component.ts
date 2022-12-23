@@ -12,6 +12,7 @@ export class LoginComponent {
   btnClick(): void{
     console.log("button clicked",this.fname);
     console.log("Length of the pwd:",(this.fpassword.length));
+    //this.router.navigateByUrl('/user');
   }
 
   btnReset(){

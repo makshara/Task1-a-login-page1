@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SubmitButtonComponent } from './submit-button/submit-button.component';
 
 const routes: Routes = [
-  {path: 'submitpage',component:SubmitButtonComponent},
+  {path: 'home/submitpage',component:SubmitButtonComponent},
   {path: 'home',component:LoginComponent},
   {path: '',component:LoginComponent},
 
