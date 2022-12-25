@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,18 @@ export class LoginComponent {
   fname = "";
   fpassword = "";
 
+  constructor(private router: Router){
+  }
+
   btnClick(): void{
     console.log("button clicked",this.fname);
     console.log("Length of the pwd:",(this.fpassword.length));
-    //this.router.navigateByUrl('/user');
+    
+    this.router.navigateByUrl('landing-page', {
+       state: { 
+        firstName: this.fname 
+      } 
+    });
   }
 
   btnReset(){
