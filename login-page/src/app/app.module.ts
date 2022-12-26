@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AccountInfoComponent } from './landing-page/account-info/account-info.component';
 import { ShopDetailsComponent } from './landing-page/shop-details/shop-details.component';
+import { NavHeaderComponent } from './shared/nav-header/nav-header.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ShopDetailsComponent } from './landing-page/shop-details/shop-details.c
     FooterComponent,
     SubmitButtonComponent,
     AccountInfoComponent,
-    ShopDetailsComponent
+    ShopDetailsComponent,
+    NavHeaderComponent
   ],
   imports: [
     BrowserModule,
