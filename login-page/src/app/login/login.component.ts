@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   fname = "";
   fpassword = "";
+  isSubmitButtonClicked: boolean = false;
 
   constructor(private router: Router){
   }
 
   btnClick(): void{
-    console.log("button clicked",this.fname);
+    this.isSubmitButtonClicked = true;
+    setTimeout( () => {
+
+      console.log("button clicked",this.fname);
     console.log("Length of the pwd:",(this.fpassword.length));
     
     this.router.navigateByUrl('landing-page', {
@@ -22,10 +26,19 @@ export class LoginComponent {
         firstName: this.fname 
       } 
     });
+    }, 5000 );
+
+   
+
+    
+  
   }
 
   btnReset(){
     this.fname = "";
     this.fpassword = "";
+  }
+  btnSubmit(){
+
   }
 }

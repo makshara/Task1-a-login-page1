@@ -9,6 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { SubmitButtonComponent } from './submit-button/submit-button.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AccountInfoComponent } from './landing-page/account-info/account-info.component';
+import { ShopDetailsComponent } from './landing-page/shop-details/shop-details.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +20,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    SubmitButtonComponent
+    SubmitButtonComponent,
+    AccountInfoComponent,
+    ShopDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

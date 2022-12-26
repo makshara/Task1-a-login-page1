@@ -27,4 +27,7 @@ export class SubmitButtonComponent {
   btnClose(){
     this.isBackButtonClicked = false;
   }
+  btnHome(){
+    this.router.navigateByUrl('landing-page');
+  }
 }

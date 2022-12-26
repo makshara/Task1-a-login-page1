@@ -11,10 +11,16 @@
             <td><input type="password" id="fpassword" name="fpassword" [(ngModel)] = "fpassword"></td>
         </tr>
         <tr>
-            <td><input type="button" value="submit" (click)="btnClick();"><i class="fa fa-plus"></i></td>
-            <td><input type="reset" value="reset" (click)="btnReset();"></td>
+            <td><input type="button" value="submit" class="btn btn-primary" (click)="btnClick();"></td>
+            <td><input type="reset" value="reset" class="btn btn-primary" (click)="btnReset();"></td>
         </tr>
     </table>
+</div>
+
+<div class="overlay"  *ngIf="isSubmitButtonClicked">
+<div class="center">
+    <mat-spinner  diameter=100 value="100" mode="indeterminate"></mat-spinner>
+</div>
 </div>
 
 
