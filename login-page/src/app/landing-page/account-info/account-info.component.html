@@ -1,3 +1,23 @@
 <app-nav-header></app-nav-header>
 <p>account-info works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">email</th>
+        <th scope="col">phone</th>
+        <th scope="col">Company name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userDetails">
+        <th scope="row">{{user.name}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.company.name}}</td>
+      </tr>
+    </tbody>
+  </table>
 {{userDetails}}

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-info.component.css']
 })
 export class AccountInfoComponent implements OnInit{
-  userDetails = 'test';
+  userDetails:any = [];
   ngOnInit(): void {
     this.getUsers();
  
@@ -18,7 +18,7 @@ export class AccountInfoComponent implements OnInit{
     this.userService.getUsers()
       .subscribe(data=>{
         console.log(JSON.stringify(data));
-        this.userDetails = JSON.stringify(data);
+        this.userDetails = data;
       });
     
   }
