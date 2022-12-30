@@ -10,11 +10,19 @@ export class LoginComponent {
   fname = "";
   fpassword = "";
   isSubmitButtonClicked: boolean = false;
-
+  passwordRegex=  "^[A-Za-z]\w{7,14}$/"  ;
+ 
   constructor(private router: Router){
   }
-
-  btnClick(): void{
+  validatePassword(){
+    if(this.fpassword.match(this.passwordRegex)){
+      console.log("Valid password")
+    }else {
+      console.log("Invalid password")
+    }
+  }  
+  btnSubmit(): void{
+    this.validatePassword();
     this.isSubmitButtonClicked = true;
     setTimeout( () => {
 
@@ -26,7 +34,7 @@ export class LoginComponent {
         firstName: this.fname 
       } 
     });
-    }, 5000 );
+    }, 1000 );
 
    
 
@@ -38,7 +46,5 @@ export class LoginComponent {
     this.fname = "";
     this.fpassword = "";
   }
-  btnSubmit(){
 
-  }
 }

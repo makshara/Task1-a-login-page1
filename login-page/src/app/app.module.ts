@@ -15,6 +15,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AccountInfoComponent } from './landing-page/account-info/account-info.component';
 import { ShopDetailsComponent } from './landing-page/shop-details/shop-details.component';
 import { NavHeaderComponent } from './shared/nav-header/nav-header.component';
+import { CommonModule } from '@angular/common';
+import { ResponseDetailsComponent } from './shared/response-details/response-details.component';
 
 
 @NgModule({
@@ -26,11 +28,13 @@ import { NavHeaderComponent } from './shared/nav-header/nav-header.component';
     SubmitButtonComponent,
     AccountInfoComponent,
     ShopDetailsComponent,
-    NavHeaderComponent
+    NavHeaderComponent,
+    ResponseDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,

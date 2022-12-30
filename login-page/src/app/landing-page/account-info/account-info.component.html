@@ -1,5 +1,18 @@
 <app-nav-header></app-nav-header>
-<p>account-info works!</p>
+
+<a target="_blank" href="/response-details/getPosts" >GET - Posts</a>
+<br>
+
+<a target="_blank" href="/response-details/getPosts1" >GET - Posts 1</a>
+<br>
+
+<a target="_blank" href="/response-details/postPosts" >POST - Posts</a>
+<br>
+
+<a target="_blank" href="/response-details/putPosts" >PUT - Posts</a>
+<br>
+
+<a target="_blank" href="/response-details/deletePosts" >DELETE - Posts</a>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -11,6 +24,7 @@
       </tr>
     </thead>
     <tbody>
+     
       <tr *ngFor="let user of userDetails">
         <th scope="row">{{user.name}}</th>
         <td>{{user.username}}</td>
@@ -18,6 +32,15 @@
         <td>{{user.phone}}</td>
         <td>{{user.company.name}}</td>
       </tr>
+      <div *ngIf="listOfUsers.length == '0'; else elseBlock">
+        List is Empty
+      </div>
+      <ng-template #elseBlock>
+        <div *ngFor="let user of listOfUsers" (click)="status=!status"
+            [ngClass]="status? 'color-red' : 'color-green'">
+            {{user | uppercase }}
+          </div>
+      </ng-template>
     </tbody>
   </table>
-{{userDetails}}
+

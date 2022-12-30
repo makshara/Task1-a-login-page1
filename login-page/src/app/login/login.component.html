@@ -1,26 +1,55 @@
-
 <div class="box">
     <p>LOGIN PAGE</p>
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td><input type="text" id="fname" name="fname" [(ngModel)] = "fname"></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="password" id="fpassword" name="fpassword" [(ngModel)] = "fpassword"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="submit" class="btn btn-primary" (click)="btnClick();"></td>
-            <td><input type="reset" value="reset" class="btn btn-primary" (click)="btnReset();"></td>
-        </tr>
-    </table>
+    <form (ngSubmit)="btnSubmit()" #loginForm="ngForm">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td>
+                    <input type="text" class="form-control" id="uname" name="uname"
+                    required minlength="8" maxlength="10"
+                    [(ngModel)]="fname" 
+                    #uname="ngModel">
+                    <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
+                    <div *ngIf="uname.errors?.['required']">
+                        Name is required.
+                      </div>
+                      <div *ngIf="uname.errors?.['minlength']">
+                        Name must be at least 8 characters long.
+                      </div>
+                      <div *ngIf="uname.errors?.['maxlength']">
+                        Name must be atmost 10 characters long.
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" class="form-control" id="fpassword" name="password"
+                    required minlength="8"
+                    #password="ngModel" 
+                    [(ngModel)]="fpassword">
+                    <div *ngIf="password.invalid && (password.touched)">
+                        <div *ngIf="password.errors?.['required']">
+                            Password is required.
+                          </div>
+                          <div *ngIf="password.errors?.['minlength']">
+                            Password must be at least 8 characters long.
+                          </div>
+
+                        </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit" class="btn btn-primary"></td>
+                <td><input type="reset" value="reset" class="btn btn-primary" (click)="btnReset();"></td>
+            </tr>
+        </table>
+    </form>
 </div>
 
-<div class="overlay"  *ngIf="isSubmitButtonClicked">
-<div class="center">
-    <mat-spinner  diameter=100 value="100" mode="indeterminate"></mat-spinner>
+<div class="overlay" *ngIf="isSubmitButtonClicked">
+    <div class="center">
+        <mat-spinner diameter=100 value="100" mode="indeterminate"></mat-spinner>
+    </div>
 </div>
-</div>
-
-
