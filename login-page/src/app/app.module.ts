@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { ResponseDetailsComponent } from './shared/response-details/response-details.component';
 import { CamelcasePipe } from './shared/pipes/camelcase.pipe';
 import { HighlightDirective } from './shared/directives/highlight.directive';
+import { HeaderInterceptorService } from './shared/interceptors/header-interceptor.service';
 
 
 @NgModule({
@@ -44,7 +45,14 @@ import { HighlightDirective } from './shared/directives/highlight.directive';
     MatProgressSpinnerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptorService,
+      multi: true
+     }
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
