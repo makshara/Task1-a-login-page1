@@ -11,8 +11,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Deploying app
+ 1) login to cloud
+ 2) initialize the resources needed for cloud
+ 3) Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ 4) deploy the app to cloud
+
 
 ## Running unit tests
 
