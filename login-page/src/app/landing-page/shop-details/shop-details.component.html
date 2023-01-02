@@ -1,2 +1,11 @@
 <app-nav-header></app-nav-header>
-<p>shop-details works!</p>
+<h2>{{name | camelcase}}</h2>
+<p [appHighlight] = 'color'>shop-details works!</p>
+
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color">Highlight me!</p>

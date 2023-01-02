@@ -17,6 +17,8 @@ import { ShopDetailsComponent } from './landing-page/shop-details/shop-details.c
 import { NavHeaderComponent } from './shared/nav-header/nav-header.component';
 import { CommonModule } from '@angular/common';
 import { ResponseDetailsComponent } from './shared/response-details/response-details.component';
+import { CamelcasePipe } from './shared/pipes/camelcase.pipe';
+import { HighlightDirective } from './shared/directives/highlight.directive';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { ResponseDetailsComponent } from './shared/response-details/response-det
     AccountInfoComponent,
     ShopDetailsComponent,
     NavHeaderComponent,
-    ResponseDetailsComponent
+    ResponseDetailsComponent,
+    CamelcasePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

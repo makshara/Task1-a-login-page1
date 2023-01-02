@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop-details.component.css']
 })
 export class ShopDetailsComponent {
-
+name='pipe testing';
+color = '';
 }
