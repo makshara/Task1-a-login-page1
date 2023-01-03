@@ -14,10 +14,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Deploying app
- 1) login to cloud
- 2) initialize the resources needed for cloud
+ 1) login to cloud (>firebase login)
+ 2) initialize the resources needed for cloud(>firebase init)[*only for the first time]
  3) Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
- 4) deploy the app to cloud
+ 4) deploy the app to cloud(>firebase deploy)
 
 
 ## Running unit tests
