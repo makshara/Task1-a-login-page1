@@ -10,9 +10,9 @@ import { SubmitButtonComponent } from './submit-button/submit-button.component';
 const routes: Routes = [
   {path: 'landing-page',component:SubmitButtonComponent,canActivate:[AuthguardGuard]},
   {path: 'home',component:LoginComponent},
-  {path: 'account-info',component:AccountInfoComponent},
+  {path: 'account-info/:userName',component:AccountInfoComponent},
   {path: 'shop-details',component:ShopDetailsComponent},
-  {path: 'response-details/:displayMode',component:ResponseDetailsComponent}
+  {path: 'response-details/:displayMode',component:ResponseDetailsComponent},
 //  {path: '',component:LoginComponent},
 ];
 

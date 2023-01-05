@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./submit-button.component.css']
 })
 export class SubmitButtonComponent {
-  firstName;
+  @Input() firstName;
   isHovered: boolean = false;
   isBackButtonClicked: boolean = false;
 
   constructor(private router: Router){
     this.firstName = this.router.getCurrentNavigation()?.extras?.state?.['firstName'];
-
+  //   this.router.navigateByUrl('account-info',{
+  //    state: { 
+  //    firstName: this.firstName 
+  //  } 
+  //  });
   }
 
   btnBack(){

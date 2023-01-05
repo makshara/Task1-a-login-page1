@@ -1,3 +1,4 @@
+import { AccountDetailsComponent } from 'src/app/shared/account-details/account-details.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,7 +21,9 @@ import { ResponseDetailsComponent } from './shared/response-details/response-det
 import { CamelcasePipe } from './shared/pipes/camelcase.pipe';
 import { HighlightDirective } from './shared/directives/highlight.directive';
 import { HeaderInterceptorService } from './shared/interceptors/header-interceptor.service';
-
+import { AccountSearchModule } from './modules/account-search/account-search.module';
+import { AccountSearchRoutingModule } from './modules/account-search-routing.module';
+import { CashService } from './services/cash.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { HeaderInterceptorService } from './shared/interceptors/header-intercept
     NavHeaderComponent,
     ResponseDetailsComponent,
     CamelcasePipe,
-    HighlightDirective
+    HighlightDirective,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -43,14 +48,16 @@ import { HeaderInterceptorService } from './shared/interceptors/header-intercept
     FormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    AccountSearchModule,
+    AccountSearchRoutingModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HeaderInterceptorService,
       multi: true
-     }
+     }, CashService
     
   ],
   bootstrap: [AppComponent]
