@@ -1,23 +1,32 @@
+import { environment } from './../../environments/environment';
+import { UserDetailsService } from 'src/app/services/user-details.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserDetails } from '../models/userdetails.model';
 
 @Component({
   selector: 'app-submit-button',
   templateUrl: './submit-button.component.html',
   styleUrls: ['./submit-button.component.css']
 })
-export class SubmitButtonComponent {
+export class SubmitButtonComponent implements OnInit{
   @Input() firstName;
   isHovered: boolean = false;
   isBackButtonClicked: boolean = false;
 
-  constructor(private router: Router){
+  constructor(private router: Router, private userdetails: UserDetailsService){
     this.firstName = this.router.getCurrentNavigation()?.extras?.state?.['firstName'];
-  //   this.router.navigateByUrl('account-info',{
-  //    state: { 
-  //    firstName: this.firstName 
-  //  } 
-  //  });
+  }
+
+  ngOnInit(): void {
+    let request:UserDetails = {
+      fName: "yash",
+      lName: "reddy"
+  };
+    this.userdetails.postUserDetails(request).subscribe(data=>{
+      environment.backgroundHeaderColor
+      console.log(JSON.stringify(data))
+    });
   }
 
   btnBack(){

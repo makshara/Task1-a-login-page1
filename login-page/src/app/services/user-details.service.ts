@@ -1,6 +1,9 @@
+import { environment } from './../../environments/environment';
+import { UserDetails } from './../models/userdetails.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
+import { GET_USER_DETAILS_URL } from '../configs/web.config';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,6 +23,9 @@ export class UserDetailsService {
   constructor( private http: HttpClient) { 
   }
   /** GET heroes from the server */
+  postUserDetails(addUser:UserDetails): Observable<UserDetails> {
+    return this.http.post<UserDetails>(environment.apiUrl+GET_USER_DETAILS_URL, addUser, httpOptions);
+  }
 getUsers(): Observable<any> {
   return this.http.get<any>(this.userUrl)
 }
