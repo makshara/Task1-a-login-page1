@@ -13,7 +13,11 @@ const routes: Routes = [
   {path: 'account-info/:userName',component:AccountInfoComponent},
   {path: 'shop-details',component:ShopDetailsComponent},
   {path: 'response-details/:displayMode',component:ResponseDetailsComponent},
-//  {path: '',component:LoginComponent},
+  {
+      path: 'search',
+      loadChildren: () => import('./modules/account-search-routing.module').
+      then(m => m.AccountSearchRoutingModule)
+  }
 ];
 
 @NgModule({
